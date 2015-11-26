@@ -1,0 +1,4 @@
+name = Logo Access
+description = Let authenticated users upload and set a site logo for the default theme.
+core = 7.x
+package = Custom

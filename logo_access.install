@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Install file for Logo Access.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function logo_access_install() {
+//  $rid = user_role_load_by_name('administrator')->rid;
+//  user_role_grant_permissions($rid, array('administer logo access'));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('administer logo access'));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access administration pages'));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('view the administration theme'));
+}
+
+/**
+ * Implements of hook_uninstall().
+ */
+function logo_access_uninstall() {
+  // Not sure if it's necessary to revoke perms on uninstall or if they
+  // will be revoked anyway automatically.
+//  $rid = user_role_load_by_name('administrator')->rid;
+//  user_role_revoke_permissions($rid, array('administer logo access'));
+  variable_del('logo_access');
+}

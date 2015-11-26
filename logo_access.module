@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Module file for Logo Access.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function logo_access_menu() {
+  $items['admin/config/media/logo_access'] = array(
+    'title' 						=> t('Logo Access'),
+    'description' 			=> 'Set a new logo',
+    'page callback' 		=> 'drupal_get_form',
+    'page arguments'   	=> array('logo_access_settings'),
+    'access arguments'	=> array('administer logo access'),
+    'file'              => 'logo_access.admin.inc',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function logo_access_permission() {
+  return array(
+    'administer logo access' => array(
+      'title'       => t('Administer Logo Access'),
+      'description' => t('Set a new site logo.'),
+    ),
+  );
+}
