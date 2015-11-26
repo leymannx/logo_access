@@ -6,6 +6,7 @@ following perms to all authenticated user:
  - administer logo access
  - view the administration theme
  - access administration pages
+
 Please test first and then change them as necessary.
 
 This module supports the Media module. If Media is enabled the form will provide a
